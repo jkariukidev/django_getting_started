@@ -4,12 +4,13 @@ from django.db import models
 
 
 class Room(models.Model):
-    name = models.CharField(max_length=50)
-    floor = models.IntegerField()
+    name = models.CharField(max_length=30)
+    floor_number = models.IntegerField()
     room_number = models.IntegerField()
 
     def __str__(self):
-        return f"{self.name}: room {self.room_number} on floor {self.floor}"
+        return f"{self.name}: room {self.room_number} on floor" \
+               f" {self.floor_number}"
 
 
 class Meeting(models.Model):
